@@ -5,12 +5,20 @@ class Employee:
         self.first_name = first_name
         self.second_name = second_name
         self.gender = gender
+        self.remaining_vacation_days = Employee.vacation_days
+
+    def consume_vacation(self, days):
+        if days > self.remaining_vacation_days:
+            print('Недостаточно отпускных дней')
+        else:
+            self.remaining_vacation_days -= days
+            print(f'{days} дней отпуска списано.')
+
+    def get_vacation_details(self):
+        return f'Остаток отпускных дней: {self.remaining_vacation_days}.'
 
 
-employee1 = Employee(first_name='Роберт', second_name='Крузо', gender='м')
-employee2 = Employee(first_name='Анна', second_name='Смирнова', gender='ж')
+employee = Employee('Роберт', 'Крузо', 'м')
+employee.consume_vacation(7)
 
-print(
-    f'Имя: {employee1.first_name}, Фамилия: {employee1.second_name}, Пол: {employee1.gender}, Отпускных дней в году: {employee1.vacation_days}.')
-print(
-    f'Имя: {employee2.first_name}, Фамилия: {employee2.second_name}, Пол: {employee2.gender}, Отпускных дней в году: {employee2.vacation_days}.')
+print(employee.get_vacation_details())
