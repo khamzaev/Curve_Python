@@ -1,4 +1,4 @@
-#!/Users/dzamal/PycharmProjects/Curve_Python/venv/bin/python3.12
+#!/Users/dzamal/PycharmProjects/sprint_3/venv/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys
