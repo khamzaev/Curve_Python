@@ -1,8 +1,12 @@
 from gameparts import Board
 
+def main():
+    game = Board()
+    game.display()
+    game.make_move(1, 1, 'x')
+    print('Ход сделан!')
+    game.display()
 
-game = Board()
-game.display()
-game.make_move(1, 1, '0')
-print('Ход сделан!')
-game.display()
+
+if __name__ == '__main__':
+    main()
