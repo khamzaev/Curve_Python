@@ -4,10 +4,7 @@ from gameparts.exceptions import FieldIndexError, CellOccupiedError
 
 
 def save_result(result):
-    # Открыть файл results.txt в режиме "добавление".
-    # Если нужно явно указать кодировку, добавьте параметр encoding='utf-8'.
     file = open('results.txt', 'a')
-    # Записать в файл содержимое переменной result.
     file.write(result + '\n')
     file.close()
 def main():
