@@ -2,6 +2,14 @@ from gameparts import Board
 
 from gameparts.exceptions import FieldIndexError, CellOccupiedError
 
+
+def save_result(result):
+    # Открыть файл results.txt в режиме "добавление".
+    # Если нужно явно указать кодировку, добавьте параметр encoding='utf-8'.
+    file = open('results.txt', 'a')
+    # Записать в файл содержимое переменной result.
+    file.write(result + '\n')
+    file.close()
 def main():
     game = Board()
     current_player = 'X'
@@ -47,12 +55,18 @@ def main():
 
         game.make_move(row, column, current_player)
         game.display()
+
         if game.check_win(current_player):
-            print(f'Победили {current_player}.')
+            result = f'Победили {current_player}.'
+            print(result)
+            save_result(result)
             running = False
         elif game.is_board_full():
-            print('Ничья!')
+            result = 'Ничья!'
+            print(result)
+            save_result(result)
             running = False
+
         current_player = '0' if current_player == 'X' else 'X'
 
 if __name__ == '__main__':
