@@ -13,10 +13,10 @@ class Board:
         self.board[row][col] = player
 
     # Метод, который отрисовывает игровое поле.
-    def display(self):
-        for row in self.board:
-            print('|'.join(row))
-            print('-' * 5)
+    #  def display(self):
+    #     for row in self.board:
+    #         print('|'.join(row))
+    #         print('-' * 5)
 
     def is_board_full(self):
         # Цикл проходится по всем столбцам игрового поля.
@@ -56,9 +56,9 @@ class Board:
     # Создать игровое поле - объект класса Board.
 game = Board()
 # Отрисовать поле в терминале.
-game.display()
+#game.display()
 # Разместить на поле символ по указанным координатам - сделать ход.
 game.make_move(2, 1, '0')
 print('Ход сделан!')
 # Перерисовать поле с учётом сделанного хода.
-game.display()
+#game.display()
